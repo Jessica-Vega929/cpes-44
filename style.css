@@ -18,19 +18,18 @@ body {
 .header {
     background-color: #1b365d;
     color: #ffffff;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     position: relative;
 }
 
-.logo-container {
+.logo-y-titulo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .logo-icon {
@@ -38,9 +37,26 @@ body {
     color: #f39c12;
 }
 
-.logo-container h1 {
-    font-size: 1.6rem;
+.logo-y-titulo h1 {
+    font-size: 1.8rem;
     font-weight: 700;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-imagen {
+    height: 60px; /* Ajusta la altura según lo necesites */
+    width: auto;  /* Mantiene la proporción de la imagen */
+}
+
+
+.logo-container h1 {
+    font-size: 1.3rem; /* Ligeramente más compacto para celulares */
+    font-weight: 500;
 }
 
 /* Control del Checkbox del Menú Hamburguesa */
@@ -49,11 +65,11 @@ body {
 }
 
 .btn-menu {
-    display: none;
-    font-size: 1.8rem;
+    display: none; /* Oculto en escritorio */
+    font-size: 1.6rem;
     color: #ffffff;
     cursor: pointer;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
@@ -227,8 +243,38 @@ body {
 
 /* Adaptabilidad a dispositivos móviles (Menú desplegable con CSS puro) */
 @media (max-width: 900px) {
+    .header {
+        flex-wrap: nowrap; /* Fuerza a que todo se quede en la misma fila superior */
+        padding: 0.8rem 1rem;
+    }
+
+    .logo-y-titulo {
+        flex: 1; /* Ocupa todo el espacio izquierdo disponible */
+        min-width: 0; /* Vital para permitir que el texto salte de línea */
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 1.6rem;
+        flex-shrink: 0; /* Evita que el icono se deforme */
+    }
+
+    .logo-y-titulo h1 {
+        font-size: 1rem; /* Tamaño ideal para móvil */
+        line-height: 1.25; /* Espaciado perfecto para las dos líneas */
+        white-space: normal; /* Permite que el texto baje a la segunda línea */
+    }
+
     .btn-menu {
-        display: block; /* Muestra el botón de 3 rayitas en pantallas pequeñas */
+        display: flex; /* Muestra el botón */
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 0.4rem;
+        flex-shrink: 0; /* Evita que el botón se comprima */
+        margin-left: 10px;
     }
 
     .navbar {
@@ -257,7 +303,6 @@ body {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* Muestra el menú cuando el checkbox está activado (al tocar las 3 rayitas) */
     #check-menu:checked ~ .navbar {
         max-height: 400px;
     }
