@@ -3,71 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPES N° 44 - Página Principal</title>
+    <title>Portal Interno - Personal Docente | Colegio Provincial de Educación Secundaria N° 44</title>
+    <!-- Tus estilos generales -->
     <link rel="stylesheet" href="style.css">
-    <!-- Iconos para redes y WhatsApp (Font Awesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Encabezado y Navegación -->
-    <!-- Encabezado y Navegación -->
-    <header class="header">
-        <!-- Agrupamos el logo y el título en este div -->
-        <div class="logo-y-titulo">
-            <div class="logo-container">
-                <img src="logo.png" alt="Logo del Colegio" class="logo-imagen">
-                <h1>Colegio Provincial de Educación Secundaria N° 44</h1>
-            </div>
-        </div>
-
-        <!-- Checkbox oculto para controlar el menú -->
-        <input type="checkbox" id="check-menu">
-
-        <!-- Botón de las tres rayitas (Hamburguesa) -->
-        <label for="check-menu" class="btn-menu">
-            <i class="fas fa-bars"></i>
-        </label>
-
-        <!-- Navegación -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="galeria.html">Galería</a></li>
-                <li><a href="vacantes.html">Vacantes</a></li>
-                <li><a href="pagos.html">Pagos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="personal-interno.html" class="btn-nav-login">
-                    <i class="fas fa-lock"></i> Acceso Docente</a></li>
-            </ul>
-        </nav>
+    <!-- Aquí puedes incluir tu cabecera normal del colegio (sin poner este enlace en el menú público) -->
+    <header>
+        <!-- Tu header habitual -->
     </header>
 
-    <!-- Contenido Principal: Sección de Iniciar Sesión -->
     <main class="main-content">
-        <section class="comunicados-container">
-            <h2><i class="fas fa-users"></i> Iniciar Sesión</h2>
-            <p class="subtitle">Accede a tu cuenta para gestionar tu información y servicios.</p>
-
+        <section class="portal-container" style="max-width: 1000px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
             
+            <!-- Cabecera del Portal -->
+            <div style="text-align: center; border-bottom: 2px solid #1b365d; padding-bottom: 1.5rem; margin-bottom: 2rem;">
+                <h2 style="color: #1b365d; font-size: 2rem;"><i class="fas fa-id-card-alt"></i> Portal Exclusivo para Docentes y Preceptores</h2>
+                <p style="color: #666; margin-top: 0.5rem;">Espacio de recursos institucionales, planillas y circulares internas.</p>
+            </div>
+
+            <!-- 1. Accesos Rápidos (Botones útiles) -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: #1b365d; font-size: 1.2rem; margin-bottom: 1rem;"><i class="fas fa-external-link-alt"></i> Accesos Rápidos</h3>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://drive.google.com" target="_blank" class="btn-opcion" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fab fa-google-drive" style="color: #4285F4;"></i> Drive Institucional
+                    </a>
+                    <a href="https://mail.google.com" target="_blank" class="btn-opcion" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-envelope" style="color: #db4437;"></i> Correo Docente
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Circulares Internas (Usando el acordeón <details> que ya conoces) -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3 style="color: #1b365d; font-size: 1.2rem; margin-bottom: 1rem;"><i class="fas fa-bullhorn"></i> Circulares y Avisos de Dirección</h3>
+                
+                <details style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; cursor: pointer;">
+                    <summary style="font-weight: bold; color: #1b365d;">Circular N° 04/2026: Pautas para entrega de planillas de calificaciones</summary>
+                    <p style="color: #555; margin-top: 0.8rem; font-size: 0.95rem; line-height: 1.5;">
+                        Estimados docentes, se les recuerda que la fecha límite para la carga de notas del primer trimestre finaliza el próximo viernes. Ante cualquier duda, comunicarse con secretaría.
+                    </p>
+                </details>
+
+                <details style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; padding: 1rem; cursor: pointer;">
+                    <summary style="font-weight: bold; color: #1b365d;">Cronograma de Reuniones de Padres</summary>
+                    <p style="color: #555; margin-top: 0.8rem; font-size: 0.95rem; line-height: 1.5;">
+                        Las reuniones se llevarán a cabo la semana entrante según el siguiente detalle por curso...
+                    </p>
+                </details>
+            </div>
+
+            <!-- 3. Sección de Descargables (Documentación Útil) -->
+            <div>
+                <h3 style="color: #1b365d; font-size: 1.2rem; margin-bottom: 1rem;"><i class="fas fa-download"></i> Descarga de Documentación Útil</h3>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+                    <li style="background: #fdfdfd; border: 1px solid #e0e0e0; padding: 0.8rem 1rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+                        <span><i class="fas fa-file-excel" style="color: #217346; margin-right: 8px;"></i> Planilla de Asistencia General (Excel)</span>
+                        <a href="#" download style="background: #1b365d; color: #fff; padding: 0.4rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem;">Descargar</a>
+                    </li>
+                    <li style="background: #fdfdfd; border: 1px solid #e0e0e0; padding: 0.8rem 1rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+                        <span><i class="fas fa-file-pdf" style="color: #cc2929; margin-right: 8px;"></i> Formulario de Justificación de Licencias (PDF)</span>
+                        <a href="#" download style="background: #1b365d; color: #fff; padding: 0.4rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem;">Descargar</a>
+                    </li>
+                </ul>
+            </div>
+
         </section>
     </main>
 
-    <!-- Pie de Página -->
-    <footer class="footer">
-        <div class="footer-content">
-            <blockquote class="frase-motivadora">
-                "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
-            </blockquote>
-            <p class="copyright">&copy; 2026 Colegio Provincial de Educación Secundaria N° 44. Todos los derechos reservados.</p>
-        </div>
+    <footer>
+        <!-- Tu footer habitual -->
     </footer>
-
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20recibir%20más%20información%20sobre%20el%20colegio" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
 </body>
 </html>

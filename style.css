@@ -53,26 +53,6 @@ body {
     width: auto;  /* Mantiene la proporción de la imagen */
 }
 
-/* Estilo especial para destacar el botón de acceso en el menú */
-.btn-nav-login {
-    background-color: #f39c12; /* Color de acento llamativo (dorado/naranja) */
-    color: #ffffff !important; /* Texto blanco forzado */
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Efecto al pasar el cursor por encima */
-.btn-nav-login:hover {
-    background-color: #d68910; /* Tono un poco más oscuro */
-    transform: translateY(-2px); /* Se eleva ligeramente */
-}
-
 .imagen-nosotros {
     align-items: center;
     max-width: 100%;
