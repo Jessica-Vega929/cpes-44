@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPES N° 44 - Página Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos para redes y WhatsApp (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <!-- Agrupamos el logo y el título en este div -->
+        <div class="logo-y-titulo">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo del Colegio" class="logo-imagen">
+                <h1>Colegio Provincial de Educación Secundaria N° 44</h1>
+            </div>
+        </div>
+
+        <!-- Checkbox oculto para controlar el menú -->
+        <input type="checkbox" id="check-menu">
+
+        <!-- Botón de las tres rayitas (Hamburguesa) -->
+        <label for="check-menu" class="btn-menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <!-- Navegación -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="vacantes.html">Vacantes</a></li>
+                <li><a href="pagos.html">Pagos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="personal-interno.html" class="btn-nav-login">
+                    <i class="fas fa-lock"></i> Acceso Docente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal: Sección de Iniciar Sesión -->
+    <main class="main-content">
+        <section class="comunicados-container">
+            <h2><i class="fas fa-users"></i> Iniciar Sesión</h2>
+            <p class="subtitle">Accede a tu cuenta para gestionar tu información y servicios.</p>
+
+            
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <blockquote class="frase-motivadora">
+                "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
+            </blockquote>
+            <p class="copyright">&copy; 2026 Colegio Provincial de Educación Secundaria N° 44. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20recibir%20más%20información%20sobre%20el%20colegio" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

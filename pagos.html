@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPES N° 44 - Página Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos para redes y WhatsApp (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <!-- Agrupamos el logo y el título en este div -->
+        <div class="logo-y-titulo">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo del Colegio" class="logo-imagen">
+                <h1>Colegio Provincial de Educación Secundaria N° 44</h1>
+            </div>
+        </div>
+
+        <!-- Checkbox oculto para controlar el menú -->
+        <input type="checkbox" id="check-menu">
+
+        <!-- Botón de las tres rayitas (Hamburguesa) -->
+        <label for="check-menu" class="btn-menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <!-- Navegación -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="vacantes.html">Vacantes</a></li>
+                <li><a href="pagos.html" class="active">Pagos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal: Sección de Pagos -->
+    <main class="main-content">
+    <section class="pagos-container">
+        <h2><i class="fas fa-file-invoice-dollar"></i> Formulario de Pagos</h2>
+        <p class="subtitle">Agradecemos completar todos los campos requeridos en el formulario y adjuntar el comprobante correspondiente.</p>
+
+        <div class="pagos-grid-layout">
+            
+            <!-- Columna Izquierda: Tarjeta de Datos Bancarios -->
+            <div class="info-banco-card">
+                <div class="banco-header">
+                    <i class="fas fa-university fa-2x"></i>
+                    <h3>DEPÓSITO BANCARIO</h3>
+                </div>
+                <div class="banco-body">
+                    <p><strong>TITULAR:</strong> Gonzalez Carina</p>
+                    <p><strong>CUIT / RUC:</strong> 20123456786</p>
+                    <p><strong>CUENTA BCP:</strong> 123456789</p>
+                    <p><strong>CBU / CCI:</strong> 001234567890025</p>
+                    <p class="nota-transferencia">Por favor, realice la transferencia e informe los datos del pago junto con el comprobante legible.</p>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Formulario con soporte de archivos (enctype="multipart/form-data") -->
+            <form class="form-pagos" action="https://formspree.io/f/xkjjwled" method="POST" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <label for="nombre-alumno"><i class="fas fa-child"></i> Nombres y apellidos del alumno(a):</label>
+                    <input type="text" id="nombre-alumno" name="nombre_alumno" placeholder="Ej: Sofía Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre-padre"><i class="fas fa-user"></i> Nombres y apellidos del padre/madre/tutor:</label>
+                    <input type="text" id="nombre-padre" name="nombre_padre" placeholder="Ej: Juan Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dni-padre"><i class="fas fa-id-card"></i> DNI del padre/madre:</label>
+                    <input type="text" id="dni-padre" name="dni_padre" placeholder="Ej: 12345678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="celular"><i class="fas fa-phone"></i> Celular / WhatsApp:</label>
+                    <input type="tel" id="celular" name="celular" placeholder="Ej: +54 9 297 123-4567" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-pago"><i class="fas fa-envelope"></i> E-mail de contacto:</label>
+                    <input type="email" id="email-pago" name="email" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="grado-pago"><i class="fas fa-graduation-cap"></i> Grado / Año educativo de alumno(a):</label>
+                    <select id="grado-pago" name="grado_alumno" required>
+                        <option value="" disabled selected>Seleccione el año...</option>
+                        <option value="1° Año">1° Año</option>
+                        <option value="2° Año">2° Año</option>
+                        <option value="3° Año">3° Año</option>
+                        <option value="4° Año">4° Año</option>
+                        <option value="5° Año">5° Año</option>
+                    </select>
+                </div>
+
+                <!-- Campo para adjuntar el comprobante (Voucher) -->
+                <div class="form-group">
+                    <label for="voucher"><i class="fas fa-file-upload"></i> Adjuntar voucher de pago (imagen legible o PDF):</label>
+                    <input type="file" id="voucher" name="voucher_pago" accept="image/*,application/pdf" required class="input-file">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje-pago"><i class="fas fa-comment-dots"></i> Mensaje (opcional):</label>
+                    <textarea id="mensaje-pago" name="mensaje" rows="3" placeholder="Escriba aquí cualquier aclaración adicional..."></textarea>
+                </div>
+
+                <!-- Botón de Enviar -->
+                <button type="submit" class="btn-enviar">
+                    <i class="fas fa-paper-plane"></i> Enviar Comprobante
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+</main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <blockquote class="frase-motivadora">
+                "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
+            </blockquote>
+            <p class="copyright">&copy; 2026 Colegio Provincial de Educación Secundaria N° 44. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20recibir%20más%20información%20sobre%20el%20colegio" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

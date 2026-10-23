@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPES N° 44 - Página Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos para redes y WhatsApp (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <!-- Agrupamos el logo y el título en este div -->
+        <div class="logo-y-titulo">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo del Colegio" class="logo-imagen">
+                <h1>Colegio Provincial de Educación Secundaria N° 44</h1>
+            </div>
+        </div>
+
+        <!-- Checkbox oculto para controlar el menú -->
+        <input type="checkbox" id="check-menu">
+
+        <!-- Botón de las tres rayitas (Hamburguesa) -->
+        <label for="check-menu" class="btn-menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <!-- Navegación -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="vacantes.html">Vacantes</a></li>
+                <li><a href="pagos.html">Pagos</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal: Sección de Comunicados -->
+    <main class="main-content">
+        <section class="contacto-container">
+            <h2><i class="fas fa-map-marked-alt"></i> Contáctenos</h2>
+            <p class="subtitle">Estamos a su disposición para resolver cualquier duda o consulta institucional.</p>
+
+            <div class="contacto-grid-layout">
+
+                <!-- Columna Izquierda: Información de Contacto -->
+                <div class="info-contacto-card">
+                    <h3><i class="fas fa-school"></i> Colegio Educatec</h3>
+
+                    <ul class="lista-contacto">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección:</strong>
+                                <p>O´Higgins 320, Las Heras, Santa Cruz.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono / WhatsApp:</strong>
+                                <p>+54 9 297 123-4567</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Correo Electrónico:</strong>
+                                <p>cpes44@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horarios de Atención:</strong>
+                                <p>Lunes a Viernes de 08:00 a 23:00 hs.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna Derecha: El Mapa de Google Maps Incrustado -->
+                <div class="mapa-card">
+                    <h3><i class="fas fa-compass"></i> Nuestra Ubicación</h3>
+                    <div class="mapa-responsive">
+                        <!-- PEGA AQUÍ EL CÓDIGO IFRAME QUE COPIASTE DE GOOGLE MAPS -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1153.8333139271458!2d-68.93877270112517!3d-46.54187915242807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdeed8817718242b%3A0x5bd383a23152b6f4!2sColegio%20Secundario%20N%C2%B044!5e0!3m2!1ses!2sar!4v1792733509058!5m2!1ses!2sar"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <blockquote class="frase-motivadora">
+                "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
+            </blockquote>
+            <p class="copyright">&copy; 2026 Colegio Provincial de Educación Secundaria N° 44. Todos los derechos
+                reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20recibir%20más%20información%20sobre%20el%20colegio"
+        class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

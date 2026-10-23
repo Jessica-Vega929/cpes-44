@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPES N° 44 - Página Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos para redes y WhatsApp (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Encabezado y Navegación -->
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <!-- Agrupamos el logo y el título en este div -->
+        <div class="logo-y-titulo">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo del Colegio" class="logo-imagen">
+                <h1>Colegio Provincial de Educación Secundaria N° 44</h1>
+            </div>
+        </div>
+
+        <!-- Checkbox oculto para controlar el menú -->
+        <input type="checkbox" id="check-menu">
+
+        <!-- Botón de las tres rayitas (Hamburguesa) -->
+        <label for="check-menu" class="btn-menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <!-- Navegación -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="vacantes.html" class="active">Vacantes</a></li>
+                <li><a href="pagos.html">Pagos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal: Solicitud de Vacantes -->
+    <main class="main-content">
+        <section class="vacantes-container">
+            <h2><i class="fas fa-file-alt"></i> Solicitud de Vacantes</h2>
+            <p class="subtitle"><br>Complete el siguiente formulario para iniciar el proceso de inscripción y reserva de
+                vacantes para el ciclo lectivo.</p><br>
+
+            <!-- Formulario que envía los datos directo a tu correo -->
+            <form class="form-vacante" action="https://formspree.io/f/xaeewgep" method="POST">
+
+                <!-- Nombre Tutor (OBLIGATORIO) -->
+                <div class="form-group">
+                    <label for="nombre-tutor"><i class="fas fa-user"></i> Nombre y Apellido del
+                        Padre/Madre/Tutor:</label>
+                    <input type="text" id="nombre-tutor" name="nombre_tutor" placeholder="Ej: Juan Pérez" required>
+                </div>
+
+                <!-- Pregunta Principal: ¿El tutor trabaja en el colegio? -->
+                <div class="form-group pregunta-trabaja">
+                    <label class="label-principal"><i class="fas fa-briefcase"></i> ¿El tutor trabaja actualmente en el
+                        colegio?</label>
+
+                    <div class="botones-container">
+                        <input type="radio" name="trabaja_colegio" value="si" id="trabaja-si" class="input-oculto">
+                        <label for="trabaja-si" class="btn-opcion">Sí</label>
+
+                        <input type="radio" name="trabaja_colegio" value="no" id="trabaja-no" class="input-oculto"
+                            checked>
+                        <label for="trabaja-no" class="btn-opcion">No</label>
+                    </div>
+
+                    <!-- Pregunta Condicional que se despliega si responde Sí -->
+                    <div class="preguntas-condicionales-trabaja">
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label for="materia-profesor"><i class="fas fa-chalkboard-teacher"></i> ¿De qué materia es
+                                profesor/a?</label>
+                            <input type="text" id="materia-profesor" name="materia_profesor"
+                                placeholder="Ej: Matemática, Literatura, etc.">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email (OBLIGATORIO) -->
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico de Contacto del Tutor:</label>
+                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <!-- Teléfono (OBLIGATORIO) -->
+                <div class="form-group">
+                    <label for="telefono"><i class="fas fa-phone"></i> Teléfono / WhatsApp del Tutor:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 9 297 123-4567" required>
+                </div>
+
+                <!-- Estudiante (OBLIGATORIO) -->
+                <div class="form-group">
+                    <label for="nombre-estudiante"><i class="fas fa-user"></i> Nombre y Apellido del Estudiante que
+                        quiere ingresar:</label>
+                    <input type="text" id="nombre-estudiante" name="nombre_estudiante" placeholder="Ej: María Perez"
+                        required>
+                </div>
+
+                <!-- Nivel/Grado (OBLIGATORIO) -->
+                <div class="form-group">
+                    <label for="nivel"><i class="fas fa-graduation-cap"></i> ¿Grado educativo que desea
+                        ingresar?:</label>
+                    <select id="nivel" name="nivel_escolar" required>
+                        <option value="" disabled selected>Seleccione una opción...</option>
+                        <option value="1° Año">1° Año</option>
+                        <option value="2° Año">2° Año</option>
+                        <option value="3° Año">3° Año</option>
+                        <option value="4° Año">4° Año</option>
+                        <option value="5° Año">5° Año</option>
+                    </select>
+                </div>
+
+                <!-- Pregunta Hermanos -->
+                <div class="form-group pregunta-hermanos">
+                    <label class="label-principal"><i class="fas fa-users"></i> ¿Tiene algún hermano cursando
+                        actualmente en el colegio?</label>
+
+                    <div class="botones-container">
+                        <input type="radio" name="tiene_hermanos" value="si" id="hermanos-si" class="input-oculto">
+                        <label for="hermanos-si" class="btn-opcion">Sí</label>
+
+                        <input type="radio" name="tiene_hermanos" value="no" id="hermanos-no" class="input-oculto"
+                            checked>
+                        <label for="hermanos-no" class="btn-opcion">No</label>
+                    </div>
+
+                    <!-- Preguntas condicionales del hermano -->
+                    <div class="preguntas-condicionales">
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label for="nombre-hermano"><i class="fas fa-child"></i> Nombre y Apellido del
+                                hermano/a:</label>
+                            <input type="text" id="nombre-hermano" name="nombre_hermano" placeholder="Ej: Sofía Pérez">
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-school"></i> ¿A qué curso y división asiste actualmente?</label>
+
+                            <div class="curso-division-container">
+                                <select id="curso-hermano" name="curso_hermano" class="select-curso">
+                                    <option value="" disabled selected>Seleccione el curso...</option>
+                                    <option value="1er Año">1er Año</option>
+                                    <option value="2do Año">2do Año</option>
+                                    <option value="3er Año">3er Año</option>
+                                    <option value="4to Año">4to Año</option>
+                                    <option value="5to Año">5to Año</option>
+                                </select>
+
+                                <select id="division-hermano" name="division_hermano" class="select-division">
+                                    <option value="" disabled selected>División...</option>
+                                    <option value="División A">A</option>
+                                    <option value="División B">B</option>
+                                    <option value="División C">C</option>
+                                    <option value="División D">D</option>
+                                    <option value="División E">E</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentarios (OPCIONAL - Sin required) -->
+                <div class="form-group">
+                    <label for="mensaje"><i class="fas fa-comment-dots"></i> Comentarios Adicionales:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"
+                        placeholder="Escriba aquí algún comentario adicional que desee agregar..."></textarea>
+                </div>
+
+                <!-- Botón de Enviar -->
+                <button type="submit" class="btn-enviar">
+                    <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <blockquote class="frase-motivadora">
+                "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
+            </blockquote>
+            <p class="copyright">&copy; 2026 Colegio Provincial de Educación Secundaria N° 44. Todos los derechos
+                reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20recibir%20más%20información%20sobre%20el%20colegio"
+        class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

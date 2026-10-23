@@ -53,6 +53,77 @@ body {
     width: auto;  /* Mantiene la proporción de la imagen */
 }
 
+/* Estilo especial para destacar el botón de acceso en el menú */
+.btn-nav-login {
+    background-color: #f39c12; /* Color de acento llamativo (dorado/naranja) */
+    color: #ffffff !important; /* Texto blanco forzado */
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto al pasar el cursor por encima */
+.btn-nav-login:hover {
+    background-color: #d68910; /* Tono un poco más oscuro */
+    transform: translateY(-2px); /* Se eleva ligeramente */
+}
+
+.imagen-nosotros {
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.texto-nosotros {
+    display: grid;
+    grid-template-columns: repeat(350px, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.subtitle-nosotros {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.badge.Mision {
+    background-color: #e3fae6;
+    color: #28c63d;
+    font-size: 1.5rem;
+}
+
+.badge.Vision {
+    background-color: #ecd2b8;
+    color: #f0720b;
+    font-size: 1.5rem;
+}
+
+.badge.Modalidad {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    font-size: 1.5rem;
+}
+
+.badge.Nivel {
+    background-color: #f7ccd7;
+    color: #d82249;
+    font-size: 1.5rem;
+}
+
+.badge.Valores {
+    background-color: #ffe0fd;
+    color: #ed00f5;
+    font-size: 1.5rem;
+}
 
 .logo-container h1 {
     font-size: 1.3rem; /* Ligeramente más compacto para celulares */
@@ -137,13 +208,50 @@ body {
     text-align: left;
 }
 
+.cards-grid-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
 .card {
     background: #ffffff;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     border-top: 4px solid #1b365d;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1
+{
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 3px 6px rgba(0, 0, 0, 0.05);
+    border: 0px solid #1b365d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1 .p1
+{
+    color: #0b4253;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.card .p2 {
+    color: #0d333f;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -164,16 +272,19 @@ body {
 .badge.importante {
     background-color: #ffebee;
     color: #c62828;
+    font-size: 1rem;
 }
 
 .badge.evento {
     background-color: #e8f5e9;
     color: #2e7d32;
+    font-size: 1rem;
 }
 
 .badge.aviso {
     background-color: #e3f2fd;
     color: #1565c0;
+    font-size: 1rem;
 }
 
 .fecha {
@@ -241,11 +352,565 @@ body {
     background-color: #1eb954;
 }
 
+/* Contenedor del Historial */
+.historial-seccion {
+    margin-top: 3rem;
+    width: 100%;
+    text-align: left;
+}
+
+.historial-acordeon {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* El botón desplegable */
+.historial-acordeon summary {
+    background-color: #1b365d;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none; /* Oculta la flecha por defecto del navegador */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.historial-acordeon summary:hover {
+    background-color: #244675;
+}
+
+/* Estilo para simular una flechita indicadora en el summary */
+.historial-acordeon summary::-webkit-details-marker {
+    display: none;
+}
+
+.historial-acordeon summary::after {
+    content: "\f078"; /* Icono de flecha hacia abajo de Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Rota la flechita cuando se abre el acordeón */
+.historial-acordeon[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Lista interna de los comunicados viejos */
+.historial-lista {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: #fafbfc;
+}
+
+.historial-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.historial-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.fecha-historial {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.historial-item h4 {
+    color: #1b365d;
+    font-size: 1.05rem;
+    margin: 0.2rem 0;
+}
+
+.historial-item p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Contenedor de la sección de vacantes */
+.vacantes-container {
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin: 1rem auto;
+}
+
+.vacantes-container h2 {
+    color: #1b365d;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.vacantes-container .subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Estructura del formulario */
+.form-vacante {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1b365d;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1b365d;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(27, 54, 93, 0.2);
+}
+
+/* Contenedor de preguntas condicionales oculto por defecto para el tutor */
+.preguntas-condicionales-trabaja {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+    border-left: 3px solid #f39c12;
+    padding-left: 1.2rem;
+    margin-top: 0;
+}
+
+/* Selector mágico (:has) que despliega la pregunta suavemente al hacer clic en "Sí" */
+.pregunta-trabaja:has(#trabaja-si:checked) .preguntas-condicionales-trabaja {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1.2rem;
+}
+
+.pregunta-hermanos {
+    margin-bottom: 1.5rem;
+}
+
+.label-principal {
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+/* Contenedor que coloca los botones lado a lado */
+.botones-container {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Ocultamos los radios nativos */
+.input-oculto {
+    display: none;
+}
+
+/* Diseño de los botones tipo chip */
+.btn-opcion {
+    cursor: pointer;
+    padding: 0.5rem 1.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    text-align: center;
+    user-select: none;
+}
+
+.btn-opcion:hover {
+    background-color: #e9ecef;
+    border-color: #1b365d;
+}
+
+/* Cambia de color el botón que esté seleccionado */
+#hermanos-si:checked ~ .botones-container label[for="hermanos-si"],
+#hermanos-no:checked ~ .botones-container label[for="hermanos-no"],
+input[value="si"]:checked + label,
+input[value="no"]:checked + label {
+    background-color: #1b365d;
+    color: #ffffff;
+    border-color: #1b365d;
+}
+
+/* Contenedor de preguntas condicionales oculto por defecto */
+.preguntas-condicionales {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+    border-left: 3px solid #f39c12;
+    padding-left: 1.2rem;
+    margin-top: 0;
+}
+
+/* Se despliega suavemente cuando seleccionas "Sí" */
+.pregunta-hermanos:has(#hermanos-si:checked) .preguntas-condicionales {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 1.2rem;
+}
+
+/* Contenedor que coloca el curso y la división uno al lado del otro */
+.curso-division-container {
+    display: flex;
+    gap: 1rem;
+}
+
+/* El select del curso ocupará más espacio que el de la división */
+.select-curso {
+    flex: 3;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* El select de la división será más compacto a la derecha */
+.select-division {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al enfocar cualquiera de los dos desplegables */
+.select-curso:focus,
+.select-division:focus {
+    outline: none;
+    border-color: #1b365d;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(27, 54, 93, 0.2);
+}
+
+/* Botón de envío */
+.btn-enviar {
+    background-color: #f39c12;
+    color: #1b365d;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+/* Cuando el formulario NO está válido todavía (faltan campos required por llenar) */
+.form-vacante:invalid .btn-enviar {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Cuando TODOS los campos requeridos están completos */
+.form-vacante:valid .btn-enviar {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #e08e0b;
+    transform: translateY(-2px);
+}
+
+/* Contenedor principal de la sección de Pagos */
+.pagos-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 1rem auto;
+    text-align: left;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pagos-container h2 {
+    color: #1b365d;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.pagos-container .subtitle {
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Estructura de dos columnas (Izquierda: Banco / Derecha: Formulario) */
+.pagos-grid-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Tarjeta informativa bancaria estilo BCP */
+.info-banco-card {
+    background: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.banco-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1b365d;
+    border-bottom: 2px solid #1b365d;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.banco-header h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.banco-body p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.nota-transferencia {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1.5rem;
+    font-style: italic;
+    border-top: 1px dashed #ccc;
+    padding-top: 0.8rem;
+}
+
+/* Diseño personalizado para el selector de archivos (voucher) */
+.input-file {
+    padding: 0.6rem;
+    background-color: #fafafa;
+    border: 1px dashed #1b365d;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.input-file:hover {
+    background-color: #f0f4f8;
+}
+
+/* --- ESTILOS GENERALES Y RESPONSIVOS DE CONTACTO --- */
+
+.contacto-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 1rem auto;
+    text-align: left;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contacto-container h2 {
+    color: #1b365d;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.contacto-container .subtitle {
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Rejilla principal: Por defecto 2 columnas para PC */
+.contacto-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.info-contacto-card,
+.mapa-card {
+    background: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.info-contacto-card h3,
+.mapa-card h3 {
+    color: #1b365d;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #1b365d;
+    padding-bottom: 0.6rem;
+}
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.lista-contacto li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.lista-contacto li i {
+    color: #f39c12;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.lista-contacto strong {
+    color: #1b365d;
+    font-size: 0.95rem;
+}
+
+.lista-contacto p {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0;
+    word-break: break-word; /* Evita que correos largos rompan el diseño en celulares */
+}
+
+/* Contenedor responsivo del mapa */
+.mapa-responsive {
+    position: relative;
+    width: 100%;
+    height: 320px; /* Altura ideal para PC */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.mapa-responsive iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* --- 📱 OPTIMIZACIÓN EXCLUSIVA PARA PANTALLAS MÓVILES (Celulares) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Reducir márgenes y paddings generales para aprovechar la pantalla del teléfono */
+    .contacto-container {
+        padding: 1.2rem;
+        margin: 0.5rem;
+        width: auto;
+    }
+
+    .contacto-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .contacto-container .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 2. Apilar las dos columnas en una sola columna vertical */
+    .contacto-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* 3. Reducir el espacio interno de las tarjetas en móviles */
+    .info-contacto-card,
+    .mapa-card {
+        padding: 1.2rem;
+    }
+
+    /* 4. Ajustar la altura del mapa para que no ocupe toda la pantalla del celular al hacer scroll */
+    .mapa-responsive {
+        height: 250px; 
+    }
+}
+
 /* Adaptabilidad a dispositivos móviles (Menú desplegable con CSS puro) */
 @media (max-width: 900px) {
     .header {
         flex-wrap: nowrap; /* Fuerza a que todo se quede en la misma fila superior */
         padding: 0.8rem 1rem;
+    }
+
+    .pagos-grid-layout {
+        grid-template-columns: 1fr; /* Se apila en una sola columna en pantallas chicas */
+    }
+
+    .contacto-grid-layout {
+        grid-template-columns: 1fr; /* En pantallas chicas se apilan verticalmente */
     }
 
     .logo-y-titulo {
